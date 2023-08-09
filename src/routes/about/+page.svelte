@@ -2,6 +2,11 @@
   import TW_CLASS from "../../constants/tailwind_class";
 </script>
 
+<svelte:head>
+	<title>About | dethz-Clock</title>
+	<meta name="description" content="Just another clock that made w/ sveltekit" />
+</svelte:head>
+
 <section>
   <div class={TW_CLASS.container}>
     <h1 class={`${TW_CLASS.heading.xxxl} !py-2 !text-4xl underline font-semibold`}>
