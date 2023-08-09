@@ -11,27 +11,16 @@
 			{#if $page.url.pathname === '/'}
 				<!-- svelte-ignore a11y-invalid-attribute -->
 				<a href="#" class={activeButton}>
-					timeCount
+					dethz-Clock
 				</a>
 			{:else}
 				<a href="/" class={navButton}>
-					timeCount
+					dethz-Clock
 				</a>
 			{/if}
 			
 		</div>
 		<div class="w-full justify-end text-right">
-			{#if $page.url.pathname === '/counts'}
-				<!-- svelte-ignore a11y-invalid-attribute -->
-				<a href="#" class={activeButton}>
-					CountDown
-				</a>
-			{:else}
-				<a href="/counts" class={navButton}>
-					CountDown
-				</a>
-			{/if}
-
 			{#if $page.url.pathname === '/about'}
 				<!-- svelte-ignore a11y-invalid-attribute -->
 				<a href="#" class={activeButton}>
