@@ -11,6 +11,8 @@
   let sec: string | undefined = undefined
   let dt: string | undefined = undefined
 
+  let screenSize: number | undefined = undefined
+
   setInterval(() => {
     const currentTime = new Date()
     const TimeCal = DayTime(currentTime)
@@ -26,41 +28,49 @@
 </script>
 
 <svelte:head>
-	<title>dethz-Clock</title>
+	<title>dethzClock</title>
 	<meta name="description" content="Just another clock that made w/ sveltekit" />
 </svelte:head>
 
+<svelte:window bind:innerWidth={screenSize}  />
+
 <section>
   <div class={TW_CLASS.container}>
-    {#if date !== undefined}
-      <div class="scale-[2]">
-        <Day TimeValue={day} />
-        <div class="my-4">
-          <div class="inline text-4xl pr-1 font-bold">
-            <span>
-              {hr}
-            </span>
-            : 
-            <span>
-              {min}
-            </span>
-            : 
-            <span>
-              {sec}
-            </span>
-          </div>
-          <div class="inline text-2xl pl-1">
-            {dt}
-          </div>
-        </div>
-        <p>
-          {date}
-        </p>
-      </div>
-    {:else}
-      <h1>
-        Loading..
+    {#if screenSize !== undefined && screenSize < 600}
+      <h1 class="text-2xl">
+        Please Rotate Your Screen!
       </h1>
+    {:else}
+      {#if date !== undefined}
+        <div class="scale-[2]">
+          <Day TimeValue={day} />
+          <div class="my-4">
+            <div class="inline text-4xl pr-1 font-bold">
+              <span>
+                {hr}
+              </span>
+              : 
+              <span>
+                {min}
+              </span>
+              : 
+              <span>
+                {sec}
+              </span>
+            </div>
+            <div class="inline text-2xl pl-1">
+              {dt}
+            </div>
+          </div>
+          <p>
+            {date}
+          </p>
+        </div>
+      {:else}
+        <h1>
+          Loading..
+        </h1>
+      {/if}
     {/if}
   </div>
 </section>

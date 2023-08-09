@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>About | dethz-Clock</title>
+	<title>About | dethzClock</title>
 	<meta name="description" content="Just another clock that made w/ sveltekit" />
 </svelte:head>
 
