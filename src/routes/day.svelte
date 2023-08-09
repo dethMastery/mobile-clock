@@ -1,6 +1,6 @@
 <script lang="ts">
   const MainClass = 'text-[grey] px-1'
-  const ActiveClass = '!text-whitesmoke'
+  const ActiveClass = '!text-whitesmoke !font-bold'
 
   export let TimeValue: number | undefined
 </script>

@@ -33,15 +33,30 @@
 <section>
   <div class={TW_CLASS.container}>
     {#if date !== undefined}
-      <p>
+      <div class="scale-[2]">
         <Day TimeValue={day} />
-      </p>
-      <p>
-        {hr} : {min} : {sec} {dt}
-      </p>
-      <p>
-        {date}
-      </p>
+        <div class="my-4">
+          <div class="inline text-4xl pr-1 font-bold">
+            <span>
+              {hr}
+            </span>
+            : 
+            <span>
+              {min}
+            </span>
+            : 
+            <span>
+              {sec}
+            </span>
+          </div>
+          <div class="inline text-2xl pl-1">
+            {dt}
+          </div>
+        </div>
+        <p>
+          {date}
+        </p>
+      </div>
     {:else}
       <h1>
         Loading..
